@@ -1,0 +1,105 @@
+Code Book
+=================
+ABOUT THE DATA CLEANUP
+
+The run_analysis.r clean up the data from the UCI HAR Dataset directory.
+
+1. Merges the training set (train/X_train.txt) and the test set (test/X_test.txt) to create one data set.
+
+2. Extracts the measurements on the mean and standard deviation for each measurement by searching the variable name contain "mean()" or "std()".
+
+3. Read y_train (train/y_train.txt) and y_test data set (test/y_test.txt). And name the activity by the activity_labels.txt
+
+4. Read the subject number from the subject_train.txt and subject_test.txt.
+
+5. Merge the subject and activity with xData
+
+6. Modify the variables name. remove the "()" and "-" in the name, and change letters to lower.
+
+7. calculate the mean of the average of each variable for each activity and each subject. Using "group_by" to group subject and activity, then calculate the mean.
+
+8. write the tidy data to the working directory.
+
+====================================================================================================================================================================
+ABOUT THE DATA 
+
+There are 68 columns in the data set.
+ [1] "subject": NUM. Identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+ [2] "activity": Identifies six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) each person performed.
+===========================================================================
+The 66 variables below are the data from the accelerometer and gyroscope.
+- first letter: t: time domain signals, f: frequency domain signals
+- bodyacc: body acceleration signals
+- gravityacc: gravity acceleration signals
+- bodygyro: body gyroscope 3-axial signals
+- jerk: Jerk signals from bodyacc or bodygyro
+- mag: the magnitude of these three-dimensional signals
+- mean: Mean value
+- std: Standard deviation
+- x,y,z: the signal from 3-axis
+ [3] "tbodyaccmeanx"           
+ [4] "tbodyaccmeany"           
+ [5] "tbodyaccmeanz"           
+ [6] "tbodyaccstdx"            
+ [7] "tbodyaccstdy"            
+ [8] "tbodyaccstdz"            
+ [9] "tgravityaccmeanx"        
+[10] "tgravityaccmeany"        
+[11] "tgravityaccmeanz"        
+[12] "tgravityaccstdx"         
+[13] "tgravityaccstdy"         
+[14] "tgravityaccstdz"         
+[15] "tbodyaccjerkmeanx"       
+[16] "tbodyaccjerkmeany"       
+[17] "tbodyaccjerkmeanz"       
+[18] "tbodyaccjerkstdx"        
+[19] "tbodyaccjerkstdy"        
+[20] "tbodyaccjerkstdz"        
+[21] "tbodygyromeanx"          
+[22] "tbodygyromeany"          
+[23] "tbodygyromeanz"          
+[24] "tbodygyrostdx"           
+[25] "tbodygyrostdy"           
+[26] "tbodygyrostdz"           
+[27] "tbodygyrojerkmeanx"      
+[28] "tbodygyrojerkmeany"      
+[29] "tbodygyrojerkmeanz"      
+[30] "tbodygyrojerkstdx"       
+[31] "tbodygyrojerkstdy"       
+[32] "tbodygyrojerkstdz"       
+[33] "tbodyaccmagmean"         
+[34] "tbodyaccmagstd"          
+[35] "tgravityaccmagmean"      
+[36] "tgravityaccmagstd"       
+[37] "tbodyaccjerkmagmean"     
+[38] "tbodyaccjerkmagstd"      
+[39] "tbodygyromagmean"        
+[40] "tbodygyromagstd"         
+[41] "tbodygyrojerkmagmean"    
+[42] "tbodygyrojerkmagstd"     
+[43] "fbodyaccmeanx"           
+[44] "fbodyaccmeany"           
+[45] "fbodyaccmeanz"           
+[46] "fbodyaccstdx"            
+[47] "fbodyaccstdy"            
+[48] "fbodyaccstdz"            
+[49] "fbodyaccjerkmeanx"       
+[50] "fbodyaccjerkmeany"       
+[51] "fbodyaccjerkmeanz"       
+[52] "fbodyaccjerkstdx"        
+[53] "fbodyaccjerkstdy"        
+[54] "fbodyaccjerkstdz"        
+[55] "fbodygyromeanx"          
+[56] "fbodygyromeany"          
+[57] "fbodygyromeanz"          
+[58] "fbodygyrostdx"           
+[59] "fbodygyrostdy"           
+[60] "fbodygyrostdz"           
+[61] "fbodyaccmagmean"         
+[62] "fbodyaccmagstd"          
+[63] "fbodybodyaccjerkmagmean" 
+[64] "fbodybodyaccjerkmagstd"  
+[65] "fbodybodygyromagmean"    
+[66] "fbodybodygyromagstd"     
+[67] "fbodybodygyrojerkmagmean"
+[68] "fbodybodygyrojerkmagstd"
