@@ -32,4 +32,4 @@ Data_mean = Data %>%
     summarise(across(1:66,mean))
 
 ## Save the tidy data as txt
-write.table(Data_mean, file = 'tidy_Data.txt', row.names = FALSE)
+write.table(Data_mean, file = 'tidy_Data.txt', row.names = FALSE, quote = FALSE)
